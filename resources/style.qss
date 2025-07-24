@@ -1,0 +1,896 @@
+/* ========================================================
+ * VARIABLES GLOBALES (commentées pour référence)
+ * ======================================================== */
+/* --color-bg-primary: #2c3e50; */
+/* --color-bg-secondary: #34495e; */
+/* --color-bg-tertiary: #1e2a36; */
+/* --color-bg-input: #3a546e; */
+/* --color-border: #3d566e; */
+/* --color-text-primary: #ecf0f1; */
+/* --color-text-secondary: #94a3b8; */
+/* --color-text-disabled: #bdc3c7; */
+
+/* Nouvelle palette cohérente */
+/* --color-accent-primary: #3498db; */ /* Bleu - couleur d'accent principale */
+/* --color-accent-primary-hover: #2980b9; */
+/* --color-accent-primary-pressed: #1f618d; */
+
+/* --color-success: #27ae60; */ /* Vert */
+/* --color-success-hover: #2ecc71; */
+/* --color-success-pressed: #1e8449; */
+
+/* --color-danger: #e74c3c; */ /* Rouge */
+/* --color-danger-hover: #c0392b; */
+/* --color-danger-pressed: #a93226; */
+
+/* --color-warning: #f39c12; */ /* Jaune/Orange */
+/* --color-warning-hover: #e67e22; */
+/* --color-warning-pressed: #d35400; */
+
+/* --color-neutral: #7f8c8d; */ /* Gris */
+/* --color-neutral-hover: #95a5a6; */
+/* --color-neutral-pressed: #606060; */
+
+/* --radius-small: 5px; */
+/* --radius-medium: 8px; */
+/* --radius-large: 10px; */
+/* --shadow-small: 0 1px 2px rgba(0, 0, 0, 0.2); */
+/* --shadow-medium: 0 2px 4px rgba(0, 0, 0, 0.2); */
+/* --shadow-large: 0 4px 8px rgba(0, 0, 0, 0.3); */
+/* --font-family-base: "Segoe UI", sans-serif; */
+/* --font-family-mono: "Consolas", "Courier New", monospace; */
+/* --font-size-small: 12px; */
+/* --font-size-base: 14px; */
+/* --font-size-large: 14pt; */
+/* --font-size-xlarge: 16pt; */
+/* --font-size-xxlarge: 36px; */
+/* --spacing-small: 5px; */
+/* --spacing-medium: 10px; */
+/* --spacing-large: 15px; */
+/* --spacing-xlarge: 20px; */
+/* --spacing-xxlarge: 30px; */
+
+/* ========================================================
+ * STYLES GLOBAUX
+ * ======================================================== */
+QMainWindow, QWidget {
+    background-color: #2c3e50;
+    font-family: "Segoe UI", sans-serif;
+    color: #ecf0f1;
+    font-size: 14px;
+}
+
+/* ========================================================
+ * SCROLLBARS
+ * ======================================================== */
+QScrollBar:vertical {
+    background-color: #2c3e50;
+    width: 10px;
+    margin: 0px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #3498db; /* Bleu cohérent */
+    min-height: 20px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background-color: #2980b9;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+QScrollBar:horizontal {
+    background-color: #2c3e50;
+    height: 10px;
+    margin: 0px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:horizontal {
+    background-color: #3498db; /* Bleu cohérent */
+    min-width: 20px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background-color: #2980b9;
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    width: 0px;
+}
+
+/* ========================================================
+ * CHAMPS DE FORMULAIRE
+ * ======================================================== */
+/* Champs de texte */
+QLineEdit, QTextEdit {
+    background-color: #34495e;
+    color: #ecf0f1;
+    border: 1px solid #3d566e;
+    border-radius: 6px;
+    padding: 8px 12px;
+    selection-background-color: #3498db; /* Bleu - couleur d'accent principale */
+    selection-color: white;
+    transition: border 0.2s, background-color 0.2s;
+}
+
+QLineEdit:focus, QTextEdit:focus {
+    border: 1px solid #3498db; /* Bleu - couleur d'accent principale */
+    background-color: #3a546e;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+QLineEdit:hover, QTextEdit:hover {
+    border: 1px solid #5dade2;
+}
+
+/* Zones de log avec style monospace */
+QTextEdit#logArea, 
+QTextEdit#sshOutputTextEdit, 
+QTextEdit#consoleOutputTextEdit {
+    background-color: #1e2a36;
+    color: #94a3b8;
+    border: 1px solid #3d566e;
+    border-radius: 6px;
+    padding: 12px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* Menus déroulants */
+QComboBox {
+    background-color: #34495e;
+    border: 1px solid #3d566e;
+    border-radius: 6px;
+    padding: 8px 12px;
+    color: #ecf0f1;
+    min-width: 6em;
+    selection-background-color: #3498db; /* Bleu - couleur d'accent principale */
+    selection-color: white;
+}
+
+QComboBox:hover {
+    border: 1px solid #3498db; /* Bleu - couleur d'accent principale */
+    background-color: #3a546e;
+}
+
+QComboBox:disabled {
+    background-color: #2c3e50;
+    color: #7f8c8d;
+    border: 1px solid #34495e;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: center right;
+    width: 20px;
+    border-left: none;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #34495e;
+    border: 1px solid #3d566e;
+    border-radius: 6px;
+    selection-background-color: #3498db; /* Bleu - couleur d'accent principale */
+    selection-color: white;
+    outline: none;
+}
+
+/* ========================================================
+ * BOUTONS
+ * ======================================================== */
+/* Style de base pour tous les boutons */
+QPushButton {
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #3498db; /* Bleu - couleur d'accent principale */
+    border: none;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+    transition-duration: 0.2s;
+    transition-property: background-color, transform, box-shadow;
+}
+
+QPushButton:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+QPushButton:pressed {
+    background-color: #1f618d;
+    transform: translateY(1px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+QPushButton:disabled {
+    background-color: #7f8c8d;
+    color: #bdc3c7;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Boutons SUCCESS (verts) */
+QPushButton#connectButton,
+QPushButton#configGenerationButton,
+QPushButton#generateButton,
+QPushButton#sshConnectionButton,
+QPushButton#saveButton,
+QPushButton#generateSCPButton,
+QPushButton#recentConfigButton {
+    background-color: #27ae60;
+    box-shadow: 0 2px 5px rgba(39, 174, 96, 0.3);
+}
+
+QPushButton#connectButton:hover,
+QPushButton#configGenerationButton:hover,
+QPushButton#generateButton:hover,
+QPushButton#sshConnectionButton:hover,
+QPushButton#saveButton:hover,
+QPushButton#generateSCPButton:hover,
+QPushButton#recentConfigButton:hover {
+    background-color: #2ecc71;
+    box-shadow: 0 4px 10px rgba(39, 174, 96, 0.4);
+}
+
+QPushButton#connectButton:pressed,
+QPushButton#configGenerationButton:pressed,
+QPushButton#generateButton:pressed,
+QPushButton#sshConnectionButton:pressed,
+QPushButton#saveButton:pressed,
+QPushButton#generateSCPButton:pressed,
+QPushButton#recentConfigButton:pressed {
+    background-color: #1e8449;
+    box-shadow: 0 1px 3px rgba(39, 174, 96, 0.3);
+}
+
+/* Boutons DANGER (rouges) */
+QPushButton#disconnectButton,
+QPushButton#btn_remove_access,
+QPushButton#btn_remove_trunk,
+QPushButton#btn_remove_vlan666,
+QPushButton#clearButton {
+    background-color: #e74c3c;
+    box-shadow: 0 2px 5px rgba(231, 76, 60, 0.3);
+}
+
+QPushButton#disconnectButton:hover,
+QPushButton#btn_remove_access:hover,
+QPushButton#btn_remove_trunk:hover,
+QPushButton#btn_remove_vlan666:hover,
+QPushButton#clearButton:hover {
+    background-color: #c0392b;
+    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.4);
+}
+
+QPushButton#disconnectButton:pressed,
+QPushButton#btn_remove_access:pressed,
+QPushButton#btn_remove_trunk:pressed,
+QPushButton#btn_remove_vlan666:pressed,
+QPushButton#clearButton:pressed {
+    background-color: #a93226;
+    box-shadow: 0 1px 3px rgba(231, 76, 60, 0.3);
+}
+
+/* Boutons INFO (bleus) */
+QPushButton#settingsButton,
+QPushButton#injectConfigButton,
+QPushButton#injectConsoleConfigButton {
+    background-color: #3498db; /* Bleu - couleur d'accent principale */
+    box-shadow: 0 2px 5px rgba(52, 152, 219, 0.3);
+}
+
+QPushButton#settingsButton:hover,
+QPushButton#injectConfigButton:hover,
+QPushButton#injectConsoleConfigButton:hover {
+    background-color: #2980b9;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.4);
+}
+
+QPushButton#settingsButton:pressed,
+QPushButton#injectConfigButton:pressed,
+QPushButton#injectConsoleConfigButton:pressed {
+    background-color: #1f618d;
+    box-shadow: 0 1px 3px rgba(52, 152, 219, 0.3);
+}
+
+/* Boutons WARNING (orange/jaune) */
+QPushButton#consoleConnectionButton,
+QPushButton#copyButton,
+QPushButton#executeBackupButton {
+    background-color: #f39c12;
+    box-shadow: 0 2px 5px rgba(243, 156, 18, 0.3);
+}
+
+QPushButton#consoleConnectionButton:hover,
+QPushButton#copyButton:hover,
+QPushButton#executeBackupButton:hover {
+    background-color: #e67e22;
+    box-shadow: 0 4px 10px rgba(243, 156, 18, 0.4);
+}
+
+QPushButton#consoleConnectionButton:pressed,
+QPushButton#copyButton:pressed,
+QPushButton#executeBackupButton:pressed {
+    background-color: #d35400;
+    box-shadow: 0 1px 3px rgba(243, 156, 18, 0.3);
+}
+
+/* Bouton Reset Execute - jaune doux */
+QPushButton#resetExecuteButton {
+    background-color: #f1c40f;
+    color: #2c3e50;
+}
+
+QPushButton#resetExecuteButton:hover {
+    background-color: #f39c12;
+}
+
+QPushButton#resetExecuteButton:pressed {
+    background-color: #e67e22;
+}
+
+/* Bouton Reset Execute - orange/warning comme sauvegarde */
+QPushButton#resetExecuteButton {
+    background-color: #f39c12;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 8px 16px;
+}
+QPushButton#resetExecuteButton:hover {
+    background-color: #e67e22;
+}
+QPushButton#resetExecuteButton:pressed {
+    background-color: #d35400;
+}
+
+/* Boutons NEUTRAL (gris) */
+QPushButton#backToHomeFromConfigButton,
+QPushButton#backToHomeFromSSHButton,
+QPushButton#backToHomeFromConsoleButton {
+    background-color: #7f8c8d;
+    font-size: 13pt;
+    padding: 12px 24px;
+}
+
+QPushButton#backToHomeFromConfigButton:hover,
+QPushButton#backToHomeFromSSHButton:hover,
+QPushButton#backToHomeFromConsoleButton:hover {
+    background-color: #95a5a6;
+}
+
+QPushButton#backToHomeFromConfigButton:pressed,
+QPushButton#backToHomeFromSSHButton:pressed,
+QPushButton#backToHomeFromConsoleButton:pressed {
+    background-color: #606060;
+}
+
+/* Boutons d'action (taille, padding spécifiques) */
+QPushButton#sshConnectionButton,
+QPushButton#consoleConnectionButton {
+    font-size: 16pt;
+    padding: 16px 32px;
+}
+
+/* Boutons de gestion de sélection et d'assignation */
+QPushButton#btn_select_all,
+QPushButton#btn_clear_selection,
+QPushButton#btn_assign_access,
+QPushButton#btn_assign_trunk,
+QPushButton#btn_assign_vlan666,
+QPushButton#btn_save_config,
+QPushButton#helpButton {
+    font-size: 12pt;
+    padding: 10px 20px;
+}
+
+/* Modifications pour les boutons d'assignation de ports */
+/* Boutons d'assignation (bleus) - taille réduite */
+QPushButton#btn_assign_access,
+QPushButton[text="Assigner en mode Access"] {
+    background-color: #3498db;
+    font-size: 12pt;
+    padding: 10px 18px;
+    border-radius: 6px;
+}
+
+QPushButton#btn_assign_access:hover,
+QPushButton[text="Assigner en mode Access"]:hover {
+    background-color: #2980b9;
+}
+
+QPushButton#btn_assign_access:pressed,
+QPushButton[text="Assigner en mode Access"]:pressed {
+    background-color: #1f618d;
+}
+
+/* Boutons d'assignation trunk (orange) - taille réduite */
+QPushButton#btn_assign_trunk,
+QPushButton[text="Assigner en mode Trunk"] {
+    background-color: #f39c12;
+    font-size: 12pt;
+    padding: 10px 18px;
+    border-radius: 6px;
+}
+
+QPushButton#btn_assign_trunk:hover,
+QPushButton[text="Assigner en mode Trunk"]:hover {
+    background-color: #e67e22;
+}
+
+QPushButton#btn_assign_trunk:pressed,
+QPushButton[text="Assigner en mode Trunk"]:pressed {
+    background-color: #d35400;
+}
+
+/* Boutons d'assignation VLAN 666 (bleu foncé) - taille réduite */
+QPushButton#btn_assign_vlan666,
+QPushButton[text="Assigner au VLAN 666 (POUBELLE)"] {
+    background-color: #2c3e50; /* Bleu foncé presque noir */
+    font-size: 12pt;
+    padding: 10px 18px;
+    border-radius: 6px;
+}
+
+QPushButton#btn_assign_vlan666:hover,
+QPushButton[text="Assigner au VLAN 666 (POUBELLE)"]:hover {
+    background-color: #34495e;
+}
+
+QPushButton#btn_assign_vlan666:pressed,
+QPushButton[text="Assigner au VLAN 666 (POUBELLE)"]:pressed {
+    background-color: #1a2530;
+}
+
+/* Boutons de suppression (rouge) - taille réduite */
+QPushButton#btn_remove_access,
+QPushButton#btn_remove_trunk,
+QPushButton#btn_remove_vlan666,
+QPushButton[text="Supprimer sélection"] {
+    background-color: #e74c3c;
+    font-size: 10pt;
+    padding: 8px 14px;
+    border-radius: 6px;
+}
+
+QPushButton#btn_remove_access:hover,
+QPushButton#btn_remove_trunk:hover,
+QPushButton#btn_remove_vlan666:hover,
+QPushButton[text="Supprimer sélection"]:hover {
+    background-color: #c0392b;
+}
+
+QPushButton#btn_remove_access:pressed,
+QPushButton#btn_remove_trunk:pressed,
+QPushButton#btn_remove_vlan666:pressed,
+QPushButton[text="Supprimer sélection"]:pressed {
+    background-color: #922b21;
+}
+
+/* Boutons de sélection (bleu) */
+QPushButton[text="Sélectionner tout"],
+QPushButton[text="Désélectionner tout"] {
+    background-color: #3498db;
+    font-size: 12pt;
+    padding: 10px 18px;
+    border-radius: 6px;
+}
+
+QPushButton[text="Sélectionner tout"]:hover,
+QPushButton[text="Désélectionner tout"]:hover {
+    background-color: #2980b9;
+}
+
+QPushButton[text="Sélectionner tout"]:pressed,
+QPushButton[text="Désélectionner tout"]:pressed {
+    background-color: #1f618d;
+}
+
+/* Bouton "Supprimer tout" (rouge) */
+QPushButton[text="Supprimer tout"] {
+    background-color: #e74c3c;
+    font-size: 13pt;
+    padding: 10px 18px;
+    border-radius: 6px;
+}
+
+QPushButton[text="Supprimer tout"]:hover {
+    background-color: #c0392b;
+}
+
+QPushButton[text="Supprimer tout"]:pressed {
+    background-color: #922b21;
+}
+
+/* Bouton "Appliquer filtre" (gris-bleu) */
+QPushButton[text="Appliquer filtre"] {
+    background-color: #34495e;
+    font-size: 12pt;
+    padding: 8px 14px;
+    border-radius: 6px;
+}
+
+QPushButton[text="Appliquer filtre"]:hover {
+    background-color: #2c3e50;
+}
+
+QPushButton[text="Appliquer filtre"]:pressed {
+    background-color: #1a2530;
+}
+
+/* Bouton "Générer la configuration Switch" (vert) */
+QPushButton[text="Générer la configuration Switch"] {
+    background-color: #27ae60;
+    font-size: 13pt;
+    padding: 12px 24px;
+    border-radius: 6px;
+}
+
+QPushButton[text="Générer la configuration Switch"]:hover {
+    background-color: #2ecc71;
+}
+
+QPushButton[text="Générer la configuration Switch"]:pressed {
+    background-color: #1e8449;
+}
+
+/* 
+Aucune règle CSS spécifique ne doit cibler uniquement #configGenerationButton.
+Le style général des boutons (QPushButton) et des boutons "success" (QPushButton#configGenerationButton, QPushButton#sshConnectionButton, etc.)
+s'applique déjà à tous les boutons, donc ils auront la même police.
+*/
+
+/* Bouton Générer Configuration (Violet) */
+QPushButton#configGenerationButton {
+    background-color: #8e44ad;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 10px 20px;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+}
+QPushButton#configGenerationButton:hover {
+    background-color: #9b59b6;
+}
+QPushButton#configGenerationButton:pressed {
+    background-color: #6c3483;
+}
+
+/* Boutons d'assignation de ports : taille très réduite */
+QPushButton#btn_assign_access,
+QPushButton#btn_assign_trunk,
+QPushButton#btn_assign_vlan666 {
+    min-width: 180px !important;
+    max-width: 220px !important;
+    min-height: 28px !important;
+    max-height: 28px !important;
+    font-size: 10pt !important;
+    font-family: "Segoe UI", "Arial", sans-serif;
+    padding: 2px 8px !important;
+    white-space: nowrap;
+    text-align: center;
+    margin: 1px 0px !important;
+}
+
+/* Style spécifique pour le bouton VLAN 666 - légèrement plus large pour le texte plus long */
+QPushButton#btn_assign_vlan666 {
+    min-width: 220px !important;
+    max-width: 800px !important;
+}
+
+/* Configuration du groupe qui contient les boutons */
+QGroupBox#assign_mode_group {
+    min-width: 250px !important;
+    max-width: 270px !important;
+    padding: 8px !important;
+    margin-right: 10px !important;
+}
+
+/* Ajustement de l'espacement dans le conteneur des boutons */
+QGroupBox#assign_mode_group > QVBoxLayout {
+    margin: 0px !important;
+    spacing: 4px !important;
+}
+
+/* Boutons d'assignation de ports : taille très réduite */
+QPushButton#btn_assign_access,
+QPushButton#btn_assign_trunk,
+QPushButton#btn_assign_vlan666 {
+    min-width: 180px !important;
+    max-width: 800px !important;
+    min-height: 28px !important;
+    max-height: 28px !important;
+    font-size: 10pt !important;
+    font-family: "Segoe UI", "Arial", sans-serif;
+    padding: 2px 8px !important;
+    white-space: nowrap;
+    text-align: center;
+    margin: 1px 0px !important;
+}
+
+/* Style spécifique pour le bouton VLAN 666 - légèrement plus large pour le texte plus long */
+QPushButton#btn_assign_vlan666 {
+    min-width: 220px !important;
+    max-width: 800px !important;
+}
+
+/* Configuration du groupe qui contient les boutons */
+QGroupBox#assign_mode_group {
+    min-width: 240px !important;
+    max-width: 900px !important;
+    padding: 8px !important;
+}
+
+/* ========================================================
+ * ONGLETS AMÉLIORÉS
+ * ======================================================== */
+QTabWidget::pane {
+    border: 1px solid #3d566e;
+    background-color: #34495e;
+    border-radius: 6px;
+    margin: 2px;
+    padding: 8px;
+}
+
+QTabBar::tab {
+    background: #2c3e50;
+    color: #bdc3c7;
+    padding: 10px 20px;
+    margin: 1px 1px 0 1px;
+    border: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    min-width: 100px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+QTabBar::tab:hover {
+    background-color: #34495e;
+    color: #ecf0f1;
+}
+
+QTabBar::tab:selected {
+    background: #34495e;
+    border-top: 2px solid #3498db; /* Bleu - couleur d'accent principale */
+    padding-top: 8px;
+    color: #ecf0f1;
+    font-weight: 600;
+}
+
+QTabBar::tab:disabled {
+    background: #7f8c8d;
+    color: #95a5a6;
+}
+
+/* ========================================================
+ * TITRES ET LABELS AMÉLIORÉS
+ * ======================================================== */
+QLabel[title="true"], 
+QLabel#sectionTitle, 
+QGroupBox::title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #3498db; /* Bleu - couleur d'accent principale */
+    padding: 5px 2px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #3498db; /* Cohérence avec la couleur d'accent */
+    text-align: left;
+    qproperty-alignment: AlignLeft;
+    letter-spacing: 0.5px;
+}
+
+QLabel#homeLabel {
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    padding: 16px;
+    margin-bottom: 16px;
+    text-align: center;
+    letter-spacing: 1px;
+    qproperty-alignment: AlignCenter;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+QLabel.subtitle, 
+QLabel[subtitle="true"] {
+    font-size: 14px;
+    font-weight: 500;
+    color: #2980b9; /* Bleu un peu plus foncé */
+    margin-top: 8px;
+    margin-bottom: 4px;
+    text-align: left;
+    qproperty-alignment: AlignLeft;
+}
+
+/* ========================================================
+ * GROUPBOX AMÉLIORÉS
+ * ======================================================== */
+QGroupBox {
+    background-color: #2c3e50;
+    border: 1px solid #3d566e;
+    border-radius: 6px;
+    margin-top: 16px;
+    padding-top: 18px;
+    font-weight: 500;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding-left: 12px;
+    background-color: #3498db; /* Bleu - couleur d'accent principale */
+    color: white;
+    padding: 3px 15px;
+    border-radius: 3px;
+    margin-left: 12px;
+    font-weight: 600;
+}
+
+/* ========================================================
+ * STYLES DES SECTIONS ET CONTENEURS
+ * ======================================================== */
+QWidget[class="section"] {
+    background-color: #2c3e50;
+    border: 1px solid #34495e;
+    border-radius: 6px;
+    padding: 12px;
+    margin: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+QLabel[class="sectionHeader"] {
+    font-size: 15px;
+    font-weight: 600;
+    color: #ecf0f1;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #3498db; /* Bleu - couleur d'accent principale */
+    margin-bottom: 10px;
+    text-align: left;
+    qproperty-alignment: AlignLeft;
+    letter-spacing: 0.5px;
+}
+
+/* Amélioration des onglets de navigation */
+QTabBar#mainTabBar::tab {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 14px 28px;
+    min-width: 140px;
+    background: #2c3e50;
+}
+
+QTabBar#mainTabBar::tab:selected {
+    background: #34495e;
+    border-top: 3px solid #3498db; /* Bleu - couleur d'accent principale */
+    color: white;
+}
+
+QTabBar#secondaryTabBar::tab {
+    font-size: 13px;
+    padding: 10px 20px;
+    min-width: 110px;
+}
+
+/* ========================================================
+ * AMÉLIORATION DES BOUTONS DE NAVIGATION
+ * ======================================================== */
+QPushButton[navButton="true"] {
+    font-size: 13pt;
+    padding: 10px 20px;
+    background-color: #2c3e50;
+    border-radius: 6px;
+    border-bottom: 3px solid #3498db; /* Bleu - couleur d'accent principale */
+    color: #ecf0f1;
+    text-align: center;
+}
+
+QPushButton[navButton="true"]:hover {
+    background-color: #34495e;
+    border-bottom: 3px solid #2980b9;
+}
+
+QPushButton[navButton="true"]:pressed {
+    background-color: #2980b9;
+    border-bottom: 3px solid #3498db;
+    padding-top: 12px;
+    padding-bottom: 8px;
+}
+
+QPushButton[navButton="true"]:checked {
+    background-color: #3498db;
+    border-bottom: 3px solid #2980b9;
+    color: white;
+}
+
+/* ========================================================
+ * LISTES ET TABLEAUX
+ * ======================================================== */
+QListView, QListWidget, QTreeView, QTreeWidget, QTableView, QTableWidget {
+    background-color: #34495e;
+    border: 1px solid #3d566e;
+    border-radius: 6px;
+    outline: none;
+    alternate-background-color: #2c3e50;
+    gridline-color: #3d566e;
+}
+
+QListView::item, QListWidget::item, QTreeView::item, QTreeWidget::item, 
+QTableView::item, QTableWidget::item {
+    color: #ecf0f1;
+    padding: 8px;
+    border-radius: 3px;
+    margin: 2px;
+}
+
+QListView::item:hover, QListWidget::item:hover, QTreeView::item:hover, 
+QTreeWidget::item:hover, QTableView::item:hover, QTableWidget::item:hover {
+    background-color: rgba(52, 152, 219, 0.2);
+}
+
+QListView::item:selected, QListWidget::item:selected, QTreeView::item:selected, 
+QTreeWidget::item:selected, QTableView::item:selected, QTableWidget::item:selected {
+    background-color: #3498db; /* Bleu - couleur d'accent principale */
+    color: white;
+}
+
+QHeaderView::section {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 6px;
+    border: 1px solid #3d566e;
+    font-weight: 600;
+}
+
+QHeaderView::section:hover {
+    background-color: #34495e;
+}
+
+/* ========================================================
+ * BARRES DE PROGRESSION
+ * ======================================================== */
+QProgressBar {
+    border: none;
+    border-radius: 6px;
+    text-align: center;
+    background-color: #34495e;
+    color: #ecf0f1;
+    font-weight: 600;
+    height: 20px;
+    margin: 5px 0;
+}
+
+QProgressBar::chunk {
+    background-color: #3498db; /* Bleu - couleur d'accent principale */
+    border-radius: 6px;
+}
+
+/* ========================================================
+ * ÉLÉMENTS SPÉCIFIQUES
+ * ======================================================== */
+/* Page d'accueil */
+QLabel#homeLabel {
+    font-size: 40px;
+    font-weight: bold;
+    color: #ecf0f1;
+    margin: 35px;
+    text-align: center;
+}
