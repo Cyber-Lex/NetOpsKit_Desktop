@@ -159,6 +159,7 @@ APP V1 /
 ---
 
 ## Roadmap / Todo
+---
 
 * [ ] Support SNMP pour la supervision.
 * [ ] Intégration d’une base de données (SQLite/PostgreSQL) pour stocker les configs et les logs.
