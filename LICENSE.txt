@@ -23,7 +23,7 @@ Sous réserve du respect de cette licence, Vous pouvez, à titre **gratuit et no
 2. Modifier, adapter et créer des œuvres dérivées du Logiciel pour un Usage non commercial.
 3. Distribuer le Logiciel ou vos dérivés, à condition de :
    a. **Conserver intégralement** la présente licence dans chaque copie ou dérivé ;
-   b. **Attribuer clairement** l’auteur : mention « © 2024 Alvaro Varez – utilisé sous licence NC-PAY-ATTR v1.0 » dans la documentation, le README ou l’interface utilisateur (si celle-ci affiche des crédits) ;
+   b. **Attribuer clairement** l’auteur : mention « © 2025 Lex – utilisé sous licence NC-PAY-ATTR v1.0 » dans la documentation, le README ou l’interface utilisateur (si celle-ci affiche des crédits) ;
    c. Fournir un lien vers le dépôt original ou le site de l’auteur, si disponible.
 
 ## 3. Restrictions d’usage commercial (FR)
