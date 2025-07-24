@@ -1,0 +1,12 @@
+PyQt5>=5.15
+paramiko
+scp
+schedule
+jinja2
+pyserial
+psutil
+cryptography
+pyarmor
+pyinstaller
+# Modules optionnels pour compatibilité Windows
+winreg; platform_system == "Windows"

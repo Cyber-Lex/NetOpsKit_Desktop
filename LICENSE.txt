@@ -1,0 +1,115 @@
+# Non‑Commercial Paid Attribution License (NC‑PAY‑ATTR) v1.0
+
+> **FR / EN dual text**. La version française prévaut ; la version anglaise est fournie à titre informatif. / The French version is the controlling version; the English version is provided for convenience.
+
+SPDX-Identifier: NC-PAY-ATTR-1.0
+Copyright © 2025 Lex
+
+Contact commercial : project-github@proton.me
+---
+
+## 1. Définitions (FR)
+
+* **« Logiciel »** : l’ensemble du code source, ressources, documentation et fichiers fournis dans ce dépôt.
+* **« Vous »** : toute personne physique ou morale recevant ce Logiciel.
+* **« Usage non commercial »** : toute utilisation personnelle, éducative, expérimentale ou de recherche **sans** but lucratif direct ou indirect et sans être intégrée dans un produit ou service facturé ou exploité par une organisation à des fins professionnelles.
+* **« Usage commercial »** : toute utilisation qui n’est pas un Usage non commercial, y compris (sans s’y limiter) l’intégration dans un produit ou service payant, l’utilisation interne par une entreprise, ou l’exploitation pour générer un avantage économique.
+
+## 2. Octroi des droits pour l’Usage non commercial (FR)
+
+Sous réserve du respect de cette licence, Vous pouvez, à titre **gratuit et non exclusif** :
+
+1. Utiliser, copier et exécuter le Logiciel pour un Usage non commercial.
+2. Modifier, adapter et créer des œuvres dérivées du Logiciel pour un Usage non commercial.
+3. Distribuer le Logiciel ou vos dérivés, à condition de :
+   a. **Conserver intégralement** la présente licence dans chaque copie ou dérivé ;
+   b. **Attribuer clairement** l’auteur : mention « © 2024 Alvaro Varez – utilisé sous licence NC-PAY-ATTR v1.0 » dans la documentation, le README ou l’interface utilisateur (si celle-ci affiche des crédits) ;
+   c. Fournir un lien vers le dépôt original ou le site de l’auteur, si disponible.
+
+## 3. Restrictions d’usage commercial (FR)
+
+Aucun droit d’Usage commercial n’est accordé par cette licence. Pour tout Usage commercial, Vous devez **obtenir une licence commerciale séparée** auprès de l’auteur et vous acquitter d’une redevance ou d’un prix convenu.
+
+* Une période de grâce **n’est pas prévue** : toute utilisation commerciale sans licence est une violation immédiate.
+* Sur notification de l’auteur, Vous disposez de 15 jours calendaires pour cesser l’usage commercial ou obtenir la licence appropriée.
+
+## 4. Contributions et dérivés (FR)
+
+* Si Vous redistribuez des œuvres dérivées pour un Usage non commercial, celles-ci doivent rester sous les **mêmes conditions (NC-PAY-ATTR v1.0)**, ou une licence compatible imposant au minimum l’interdiction d’usage commercial et l’attribution.
+* Les contributions que Vous soumettez au dépôt original peuvent être réutilisées par l’auteur dans les versions futures sous la présente licence et/ou sous une licence commerciale, sans compensation supplémentaire, sauf accord écrit contraire.
+
+## 5. Absence de garantie (FR)
+
+LE LOGICIEL EST FOURNI « TEL QUEL », SANS AUCUNE GARANTIE EXPRESSE OU IMPLICITE, Y COMPRIS, SANS LIMITATION, LES GARANTIES DE QUALITÉ MARCHANDE, D’ADÉQUATION À UN USAGE PARTICULIER ET D’ABSENCE DE CONTREFAÇON. VOUS ASSUMEZ TOUS LES RISQUES LIÉS À L’UTILISATION DU LOGICIEL.
+
+## 6. Limitation de responsabilité (FR)
+
+EN AUCUN CAS L’AUTEUR NE POURRA ÊTRE TENU RESPONSABLE DE DOMMAGES DIRECTS, INDIRECTS, SPÉCIAUX, ACCESSOIRES OU CONSÉCUTIFS, NI DE PERTES DE PROFITS, DE DONNÉES OU D’USAGE, RÉSULTANT DE L’UTILISATION OU DE L’INCAPACITÉ D’UTILISER LE LOGICIEL, MÊME SI L’AUTEUR A ÉTÉ AVERTI DE LA POSSIBILITÉ DE TELS DOMMAGES.
+
+## 7. Résiliation (FR)
+
+Cette licence prendra fin automatiquement si Vous enfreignez l’une de ses clauses. À la résiliation, Vous devez cesser toute utilisation du Logiciel et détruire toutes les copies en votre possession. Les sections « Absence de garantie » et « Limitation de responsabilité » survivent à la résiliation.
+
+## 8. Divers (FR)
+
+* Cette licence ne vous confère aucun droit d’utilisation de marques, logos ou noms commerciaux de l’auteur.
+* Le fait pour l’auteur de ne pas faire respecter un droit ou une clause ne constitue pas une renonciation.
+* Si une clause est jugée invalide, les autres restent en vigueur.
+* Droit applicable et juridiction : France.
+
+---
+
+## 1. Definitions (EN)
+
+* **“Software”**: the source code, resources, documentation and files provided in this repository.
+* **“You”**: any individual or legal entity receiving the Software.
+* **“Non-Commercial Use”**: personal, educational, experimental or research use **without** direct or indirect profit and not embedded in a paid or professionally exploited product or service.
+* **“Commercial Use”**: any use that is not Non-Commercial Use, including (without limitation) embedding the Software in a paid product/service, internal use by a company, or exploitation to generate economic benefit.
+
+## 2. Grant for Non-Commercial Use (EN)
+
+Subject to compliance with this license, You are granted a **free, non-exclusive** right to:
+
+1. Use, copy and run the Software for Non-Commercial Use.
+2. Modify, adapt and create derivative works of the Software for Non-Commercial Use.
+3. Distribute the Software or your derivatives, provided that:
+   a. You **retain this license** in each copy or derivative;
+   b. You **credit the author** clearly: “© 2025 Lex – used under NC-PAY-ATTR v1.0” in documentation, README, or the UI credits;
+   c. You provide a link back to the original repository or the author’s website, if available.
+
+## 3. Commercial Use Restriction (EN)
+
+No Commercial Use rights are granted by this license. For any Commercial Use, You must **obtain a separate commercial license** from the author and pay the agreed fee.
+
+* There is **no grace period**: any commercial use without a license is an immediate violation.
+* Upon author’s notice, You have 15 calendar days to cease Commercial Use or obtain the proper license.
+
+## 4. Contributions & Derivatives (EN)
+
+* If You redistribute derivative works for Non-Commercial Use, those works must remain under these **same terms (NC-PAY-ATTR v1.0)**, or a compatible license imposing at least the non-commercial and attribution obligations.
+* Contributions You submit to the original repository may be reused by the author in future versions under this license and/or under a commercial license, without additional compensation, unless otherwise agreed in writing.
+
+## 5. Disclaimer of Warranty (EN)
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. YOU ASSUME ALL RISKS ASSOCIATED WITH ITS USE.
+
+## 6. Limitation of Liability (EN)
+
+IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES, OR LOSS OF PROFITS, DATA, OR USE, ARISING FROM OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+## 7. Termination (EN)
+
+This license terminates automatically if You breach any of its terms. Upon termination, You must stop using the Software and destroy all copies in your possession. Sections “Disclaimer of Warranty” and “Limitation of Liability” survive termination.
+
+## 8. Miscellaneous (EN)
+
+* This license does not grant any rights to use the author’s trademarks, logos or trade names.
+* Failure of the author to enforce any right or provision shall not be deemed a waiver.
+* If any provision is held invalid, the remaining provisions shall remain in effect.
+* Governing law and jurisdiction: France.
+
+---
+**Pour un usage commercial, contactez :** project-github@proton.me
+
+**For commercial use, please contact:** project-github@proton.me
+---

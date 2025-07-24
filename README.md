@@ -70,8 +70,8 @@ Ce projet est distribué sous licence propriétaire pour usage interne ou éduca
 
 ---
 
-**Auteur** : Alvaro Varez  
-**Contact** : alvaro.varez@protonmail.com
+**Auteur** : Lex
+**Contact** : project-github@proton.me
 
 ---
 
